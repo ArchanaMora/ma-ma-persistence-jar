@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<clay-model clay-version="2.0.0">
+<database-model author="" begin-script="" end-script="" id="21297dc9:1475e4ff52a:-8000" name="MobilityAggregation" sql-dialect-id="jp.azzurri.clay.dialect.Derby_10_2_Dialect" version="1.0">
+<schema-list>
+<schema id="21297dc9:1475e4ff52a:-7fff" name="mobile">
+<table-list>
+<table id="2b5c6456:147cfb03222:-7ea9" name="error_code">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ea7" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ea6" mandatory="false" name="error_key">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ea3" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ea2" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ea1" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ea0" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="2b5c6456:147cfb03222:-7e9f" name="PK_ERROR_CODE">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="2b5c6456:147cfb03222:-7e9c" name="exception_log_method_param">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e9a" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e99" mandatory="false" name="exception_log_id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e98" mandatory="true" name="param_position">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e97" mandatory="false" name="param_type">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e96" mandatory="false" name="param_value">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e95" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e94" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e93" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e92" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="2b5c6456:147cfb03222:-7e91" name="PK_EXCEPTION_LOG_METHOD_PARAM">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="2b5c6456:147cfb03222:-7e59" name="FK_exception_log_method_param_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_EXCEPTION_LOG" referenced-table="exception_log" referenced-table-schema="mobile" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="exception_log_id" referenced-key-column-name="id"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="2b5c6456:147cfb03222:-7e90" name="exception_log">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e8e" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e8d" mandatory="false" name="package_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e8c" mandatory="false" name="class_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e8b" mandatory="false" name="method_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e8a" mandatory="false" name="web_service">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e89" mandatory="false" name="web_service_wsdl_location">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e88" mandatory="false" name="exception_type">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="2000" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e87" mandatory="false" name="exception_message">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e86" mandatory="false" name="exception_stack_trace">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e85" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e84" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e83" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e82" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="2b5c6456:147cfb03222:-7e81" name="PK_EXCEPTION_LOG">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="2b5c6456:147cfb03222:-7e24" name="metric">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e22" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e21" mandatory="false" name="package_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e20" mandatory="false" name="class_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e1f" mandatory="false" name="method_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e1e" mandatory="false" name="return_type">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e1d" mandatory="false" name="return_value">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e1c" mandatory="false" name="exception_type">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e1b" mandatory="false" name="execution_time">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e1a" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e19" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e18" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e17" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="2b5c6456:147cfb03222:-7e16" name="PK_METRIC">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="2b5c6456:147cfb03222:-7e15" name="metric_method_param">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e13" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e12" mandatory="false" name="metric_id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e11" mandatory="true" name="param_position">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e10" mandatory="false" name="param_type">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e0f" mandatory="false" name="param_value">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e0e" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e0d" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e0c" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7e0b" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="2b5c6456:147cfb03222:-7e0a" name="PK_METRIC_METHOD_PARAM">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="2b5c6456:147cfb03222:-7d60" name="FK_metrics_method_param_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_METRIC" referenced-table="metric" referenced-table-schema="mobile" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="metric_id" referenced-key-column-name="id"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="2b5c6456:147cfb03222:-7d91" name="configuration">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d8f" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d8e" mandatory="false" name="config_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d8d" mandatory="false" name="config_type">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d8c" mandatory="false" name="config_value">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d8b" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d8a" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d89" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d88" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="2b5c6456:147cfb03222:-7d87" name="PK_CONFIGURATION">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="2b5c6456:147cfb03222:-7d10" name="application_cache">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d0e" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d0c" mandatory="false" name="cache_key">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d0b" mandatory="false" name="cache_type">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d0a" mandatory="false" name="cache_value">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d09" mandatory="false" name="hit_count">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d08" mandatory="false" name="last_access_time">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d07" mandatory="false" name="expire_duration">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d06" mandatory="false" name="expires_on">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d05" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d04" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d03" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7d02" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="2b5c6456:147cfb03222:-7d01" name="PK_APPLICATION_CACHE">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="2b5c6456:147cfb03222:-7d00" name="method_cache_method_param">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cfe" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cfd" mandatory="false" name="method_cache_id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cfc" mandatory="true" name="param_position">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cfb" mandatory="false" name="param_type">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cfa" mandatory="false" name="param_value">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cf9" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cf8" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cf7" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cf6" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="2b5c6456:147cfb03222:-7cf5" name="PK_METHOD_CACHE_METHOD_PARAM">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="2b5c6456:147cfb03222:-7cb8" name="FK_method_cache_method_param_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_METHOD_CACHE" referenced-table="method_cache" referenced-table-schema="mobile" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="method_cache_id" referenced-key-column-name="id"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="2b5c6456:147cfb03222:-7cf4" name="user_cache">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cf2" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cf1" mandatory="false" name="user_key">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cef" mandatory="false" name="cache_key">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cee" mandatory="false" name="cache_type">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ced" mandatory="false" name="cache_value">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cec" mandatory="false" name="hit_count">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ceb" mandatory="false" name="last_access_time">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cea" mandatory="false" name="expire_duration">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ce9" mandatory="false" name="expires_on">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ce8" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ce7" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ce6" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ce5" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="2b5c6456:147cfb03222:-7ce4" name="PK_USER_CACHE">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="2b5c6456:147cfb03222:-7ce3" name="method_cache">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ce1" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="10000" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7ce0" mandatory="false" name="call_signature">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cdf" mandatory="false" name="package_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cde" mandatory="false" name="class_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cdd" mandatory="false" name="method_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cdc" mandatory="false" name="return_type">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cdb" mandatory="false" name="return_value">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cda" mandatory="false" name="hit_count">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cd9" mandatory="false" name="last_access_time">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cd8" mandatory="false" name="expire_duration">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cd7" mandatory="false" name="expires_on">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cd6" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cd5" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cd4" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2b5c6456:147cfb03222:-7cd3" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="2b5c6456:147cfb03222:-7cd2" name="PK_METHOD_CACHE">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table alias="idcard_details" id="4e05aa6a:1487fa01f32:-7fc2" name="idcard_details">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fc0" mandatory="true" name="id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fbf" mandatory="true" name="user_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fbe" mandatory="true" name="hc_id">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fbd" mandatory="false" name="member_seq_number">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fbc" mandatory="false" name="group_id">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fbb" mandatory="false" name="record_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fba" mandatory="false" name="system_lob">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="10" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fb9" mandatory="false" name="is_default">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="30" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fb8" mandatory="false" name="card_type">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="30" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fb7" mandatory="false" name="is_identified">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fb6" mandatory="false" name="card_order">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fb5" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fb4" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fb3" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fb2" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="4e05aa6a:1487fa01f32:-7fb1" name="PK_IDCARD_DETAILS">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="4e05aa6a:1487fa01f32:-7fab" name="metrics_today">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fa9" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="40" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fa8" mandatory="false" name="application_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="40" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fa7" mandatory="false" name="component_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fa6" mandatory="false" name="ts_date_time">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="150" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fa5" mandatory="false" name="class_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="350" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fa4" mandatory="false" name="method_signature">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fa3" mandatory="false" name="parameters">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fa2" mandatory="false" name="return_value">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fa1" mandatory="false" name="time_spent_in_millis">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="150" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7fa0" mandatory="false" name="exception_class_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="2000" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f9f" mandatory="false" name="exception_message">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f9e" mandatory="false" name="username">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="10" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f9d" mandatory="false" name="jboss_server">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+</column-list>
+<primary-key id="4e05aa6a:1487fa01f32:-7f9c" name="PK_METRICS_TODAY">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="4e05aa6a:1487fa01f32:-7f9b" name="metrics_recent">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f99" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="40" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f98" mandatory="false" name="application_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="40" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f97" mandatory="false" name="component_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f96" mandatory="false" name="ts_date_time">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="150" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f95" mandatory="false" name="class_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="350" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f94" mandatory="false" name="method_signature">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f93" mandatory="false" name="parameters">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="1024" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f92" mandatory="false" name="return_value">
+<data-type name="CLOB" selected-variant-pattern="CLOB(%n K)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f91" mandatory="false" name="time_spent_in_millis">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="150" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f90" mandatory="false" name="exception_class_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="2000" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f8f" mandatory="false" name="exception_message">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f8e" mandatory="false" name="username">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="10" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f8d" mandatory="false" name="jboss_server">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+</column-list>
+<primary-key id="4e05aa6a:1487fa01f32:-7f8c" name="PK_METRICS_RECENT">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="4e05aa6a:1487fa01f32:-7f8b" name="metrics_dailyrollup">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f89" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="40" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f88" mandatory="false" name="application_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="40" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f87" mandatory="false" name="component_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f86" mandatory="false" name="ts_date">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="150" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f85" mandatory="false" name="class_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="350" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f84" mandatory="false" name="method_signature">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f83" mandatory="false" name="num_invocations">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f82" mandatory="false" name="num_successes">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f81" mandatory="false" name="avg_time_spent_in_millis">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="4e05aa6a:1487fa01f32:-7f80" mandatory="false" name="num_exceptions">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="4e05aa6a:1487fa01f32:-7f7f" name="PK_METRICS_DAILYROLLUP">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="72206b16:1488530aa38:-7fa9" name="log_message">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="72206b16:1488530aa38:-7fa7" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="72206b16:1488530aa38:-7fa6" mandatory="false" name="hostname">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="72206b16:1488530aa38:-7fa5" mandatory="false" name="thread_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="10" decimal-digits="0" default-value="" id="72206b16:1488530aa38:-7fa4" mandatory="false" name="log_level">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="72206b16:1488530aa38:-7fa3" mandatory="false" name="class_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="72206b16:1488530aa38:-7fa2" mandatory="false" name="method_name">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="2000" decimal-digits="0" default-value="" id="72206b16:1488530aa38:-7fa1" mandatory="false" name="message">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="72206b16:1488530aa38:-7fa0" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="72206b16:1488530aa38:-7f9f" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="72206b16:1488530aa38:-7f9e" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="72206b16:1488530aa38:-7f9d" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="72206b16:1488530aa38:-7f9c" name="PK_LOG_MESSAGE">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="709bc7ab:14c0478fd9a:-7feb" name="error_code_locale">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fe9" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fe8" mandatory="false" name="error_code_id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="2000" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fe7" mandatory="false" name="error_message">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fe6" mandatory="false" name="locale">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fe5" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fe4" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fe3" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fe2" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="709bc7ab:14c0478fd9a:-7fe1" name="PK_ERROR_CODE_LOCALE">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="709bc7ab:14c0478fd9a:-7f8b" name="FK_error_code_locale_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_ERROR_CODE" referenced-table="error_code" referenced-table-schema="mobile" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="error_code_id" referenced-key-column-name="id"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="709bc7ab:14c0478fd9a:-7fda" name="messages">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fd8" mandatory="true" name="id">
+<data-type name="BIGINT" selected-variant-pattern="BIGINT"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fd7" mandatory="false" name="message_key">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="8000" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fd6" mandatory="false" name="message">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fd5" mandatory="false" name="locale">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fd4" mandatory="false" name="created_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fd3" mandatory="false" name="created_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+<column auto-increment="false" column-size="50" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fd2" mandatory="false" name="updated_by">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="709bc7ab:14c0478fd9a:-7fd1" mandatory="false" name="updated_date">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP"/>
+</column>
+</column-list>
+<primary-key id="709bc7ab:14c0478fd9a:-7fd0" name="PK_MESSAGES">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+</table-list>
+</schema>
+</schema-list>
+</database-model>
+<diagram>
+<table-figure refid="2b5c6456:147cfb03222:-7ea9" x="880" y="600"/>
+<table-figure refid="2b5c6456:147cfb03222:-7e9c" x="565" y="385"/>
+<table-figure refid="2b5c6456:147cfb03222:-7e90" x="530" y="81"/>
+<table-figure refid="2b5c6456:147cfb03222:-7e24" x="1020" y="88"/>
+<table-figure refid="2b5c6456:147cfb03222:-7e15" x="1017" y="382"/>
+<table-figure refid="2b5c6456:147cfb03222:-7d91" x="1252" y="90"/>
+<table-figure refid="2b5c6456:147cfb03222:-7d10" x="302" y="86"/>
+<table-figure refid="2b5c6456:147cfb03222:-7d00" x="60" y="384"/>
+<table-figure refid="2b5c6456:147cfb03222:-7cf4" x="302" y="341"/>
+<table-figure refid="2b5c6456:147cfb03222:-7ce3" x="54" y="84"/>
+<table-figure refid="4e05aa6a:1487fa01f32:-7fc2" x="1243" y="309"/>
+<table-figure refid="4e05aa6a:1487fa01f32:-7fab" x="31" y="613"/>
+<table-figure refid="4e05aa6a:1487fa01f32:-7f9b" x="311" y="619"/>
+<table-figure refid="4e05aa6a:1487fa01f32:-7f8b" x="604" y="628"/>
+<table-figure refid="72206b16:1488530aa38:-7fa9" x="804" y="358"/>
+<table-figure refid="709bc7ab:14c0478fd9a:-7feb" x="882" y="783"/>
+<table-figure refid="709bc7ab:14c0478fd9a:-7fda" x="1133" y="604"/>
+</diagram>
+</clay-model>

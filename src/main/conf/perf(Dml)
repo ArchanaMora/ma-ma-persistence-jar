@@ -1,0 +1,112 @@
+-- MOBILE.SERVICE_ENV table
+insert into MOBILE.SERVICE_ENV(service_name, env, created_by, created_date, updated_by, UPDATED_DATE) VALUES
+('Eligibility', 'PERF', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry', 'PERF', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberClaimsInquiry', 'PERF', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry', 'PERF', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberSpending', 'PERF', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('PropertiesFinder', 'PERF', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('profilesettings', 'PERF', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('patrientrating', 'PERF', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+-- MOBILE.SERVICE_END_POINT Table
+
+INSERT INTO MOBILE.SERVICE_END_POINT(service_name, service_method, service_url, env, created_by, created_date, updated_by, updated_date) VALUES 
+('Eligibility','getContract','https://uat3.internal2.eportal.wellpoint.com/services/eligibilityDomain/v1/eligibilityService','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('Eligibility','findMemberContracts','https://uat3.internal2.eportal.wellpoint.com/services/eligibilityDomain/v1/eligibilityService','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('Eligibility','getMemberContracts','https://uat3.internal2.eportal.wellpoint.com/services/eligibilityDomain/v1/eligibilityService','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+INSERT INTO MOBILE.SERVICE_END_POINT(service_name, service_method, service_url, env, created_by, created_date, updated_by, updated_date) VALUES 
+('MemberInquiry','getContractList','https://uats-dp.wellpoint.com/MemberService/3.0/MemberInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','getContractSummary','https://uats-dp.wellpoint.com/MemberService/3.0/MemberInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','getCPLoginObjects','https://uats-dp.wellpoint.com/MemberService/3.0/MemberInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','getGroupingsAttribution','https://uats-dp.wellpoint.com/MemberService/3.0/MemberInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','getPrivacyElections','https://uats-dp.wellpoint.com/MemberService/3.0/MemberInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','getSummary','https://uats-dp.wellpoint.com/MemberService/3.0/MemberInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','getThumbnail','https://uats-dp.wellpoint.com/MemberService/3.0/MemberInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','searchById','https://uats-dp.wellpoint.com/MemberService/3.0/MemberInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','searchByName','https://uats-dp.wellpoint.com/MemberService/3.0/MemberInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+
+INSERT INTO MOBILE.SERVICE_END_POINT(service_name, service_method, service_url, env, created_by, created_date, updated_by, updated_date) VALUES 
+('MemberClaimsInquiry','searchByIndividualId','https://uats-dp.wellpoint.com/MemberService/3.0/MemberClaimsInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberClaimsInquiry','searchByContractId','https://uats-dp.wellpoint.com/MemberService/3.0/MemberClaimsInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+INSERT INTO MOBILE.SERVICE_END_POINT(service_name, service_method, service_url, env, created_by, created_date, updated_by, updated_date) VALUES 
+('MemberBenefitInquiry','getBasicEligibility','https://uats-dp.wellpoint.com/Member/3.0/MemberBenefitInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','getLimitedLiabilityAndCOBDetails','https://uats-dp.wellpoint.com/Member/3.0/MemberBenefitInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','getPolicyDetail','https://uats-dp.wellpoint.com/Member/3.0/MemberBenefitInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','getPolicyBenefits','https://uats-dp.wellpoint.com/Member/3.0/MemberBenefitInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','getMemberCOBDetails','https://uats-dp.wellpoint.com/Member/3.0/MemberBenefitInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','addMemberCOB','https://uats-dp.wellpoint.com/Member/3.0/MemberBenefitInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','declineMemberCOB','https://uats-dp.wellpoint.com/Member/3.0/MemberBenefitInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','getBenefits','https://uats-dp.wellpoint.com/Member/3.0/MemberBenefitInquiry','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+INSERT INTO MOBILE.SERVICE_END_POINT(service_name, service_method, service_url, env, created_by, created_date, updated_by, updated_date) VALUES 
+('MemberSpending','getContext','https://uats-dp.WELLPOINT.COM/Member/2.0/MemberSpendingAccount','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberSpending','getCurrentBalanceReport','https://uats-dp.WELLPOINT.COM/Member/2.0/MemberSpendingAccount','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberSpending','getTransactionHistoryReport','https://uats-dp.WELLPOINT.COM/Member/2.0/MemberSpendingAccount','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberSpending','getYTDSummaryReport','https://uats-dp.WELLPOINT.COM/Member/2.0/MemberSpendingAccount','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+INSERT INTO MOBILE.SERVICE_END_POINT(service_name, service_method, service_url, env, created_by, created_date, updated_by, updated_date) VALUES 
+('PropertiesFinder','getProperties','http://preprodcontrib-inter.wellpoint.com/wellpoint/idcplg','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+INSERT INTO MOBILE.SERVICE_END_POINT(service_name, service_method, service_url, env, created_by, created_date, updated_by, updated_date) VALUES 
+('profilesettings','getMemberProfile','https://uat2.internal2.eportal.wellpoint.com/services/userDomain/v1/profileService','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('profilesettings','getContactPreferences','https://uat2.internal2.eportal.wellpoint.com/services/userDomain/v1/profileService','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('profilesettings','getLoginProfile','https://uat2.internal2.eportal.wellpoint.com/services/userDomain/v1/profileService','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('profilesettings','updateMemberProfile','https://uat2.internal2.eportal.wellpoint.com/services/userDomain/v1/profileService','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('profilesettings','updateContactPreferences','https://uat2.internal2.eportal.wellpoint.com/services/userDomain/v1/profileService','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('profilesettings','updateLoginProfile','https://uat2.internal2.eportal.wellpoint.com/services/userDomain/v1/profileService','PERF','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+--MOBILE.SERVICE_ESB_SECURITY Table
+
+INSERT INTO MOBILE.SERVICE_ESB_SECURITY(service_name, service_method, env, user_name, password, nonce, created, created_by, created_date, updated_by, updated_date) VALUES 
+('Eligibility','getContract','PERF','srcLDAPescWSSecurity', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('Eligibility','findMemberContracts','PERF','srcLDAPescWSSecurity', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('Eligibility','getMemberContracts','PERF','srcLDAPescWSSecurity', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+INSERT INTO MOBILE.SERVICE_ESB_SECURITY(service_name, service_method, env, user_name, password, nonce, created, created_by, created_date, updated_by, updated_date) VALUES 
+('MemberInquiry','getContractList','PERF','srcLDAPescWASAdmin', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','getContractSummary','PERF','srcLDAPescWASAdmin', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','getCPLoginObjects','PERF','srcLDAPescWASAdmin', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','getGroupingsAttribution','PERF','srcLDAPescWASAdmin', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','getPrivacyElections','PERF','srcLDAPescWASAdmin', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','getSummary','PERF','srcLDAPescWASAdmin', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','getThumbnail','PERF','srcLDAPescWASAdmin', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','searchById','PERF','srcLDAPescWASAdmin', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberInquiry','searchByName','PERF','srcLDAPescWASAdmin', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+INSERT INTO MOBILE.SERVICE_ESB_SECURITY(service_name, service_method, env, user_name, password, nonce, created, created_by, created_date, updated_by, updated_date) VALUES 
+('MemberClaimsInquiry','searchByIndividualId','PERF','WAWUSR', 'WAWTSTRGN', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberClaimsInquiry','searchByContractId','PERF','WAWUSR', 'WAWTSTRGN', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+INSERT INTO MOBILE.SERVICE_ESB_SECURITY(service_name, service_method, env, user_name, password, nonce, created, created_by, created_date, updated_by, updated_date) VALUES 
+('MemberBenefitInquiry','getBasicEligibility','PERF','EPORT', 'EPORTTEST', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','getLimitedLiabilityAndCOBDetails','PERF','EPORT', 'EPORTTEST', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','getPolicyDetail','PERF','EPORT', 'EPORTTEST', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','getPolicyBenefits','PERF','EPORT', 'EPORTTEST', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','getMemberCOBDetails','PERF','EPORT', 'EPORTTEST', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','addMemberCOB','PERF','EPORT', 'EPORTTEST', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','declineMemberCOB','PERF','EPORT', 'EPORTTEST', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberBenefitInquiry','getBenefits','PERF','EPORT', 'EPORTTEST', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+INSERT INTO MOBILE.SERVICE_ESB_SECURITY(service_name, service_method, env, user_name, password, nonce, created, created_by, created_date, updated_by, updated_date) VALUES 
+('MemberSpending','getContext','PERF','EPORT', 'EPORTTEST', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberSpending','getCurrentBalanceReport','PERF','EPORT', 'EPORTTEST', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberSpending','getTransactionHistoryReport','PERF','EPORT', 'EPORTTEST', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('MemberSpending','getYTDSummaryReport','PERF','EPORT', 'EPORTTEST', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+INSERT INTO MOBILE.SERVICE_ESB_SECURITY(service_name, service_method, env, user_name, password, nonce, created, created_by, created_date, updated_by, updated_date) VALUES 
+('PropertiesFinder','getProperties','PERF','Consumer_Test_App', 'yNz792', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+INSERT INTO MOBILE.SERVICE_ESB_SECURITY(service_name, service_method, env, user_name, password, nonce, created, created_by, created_date, updated_by, updated_date) VALUES 
+('profilesettings','getMemberProfile','PERF','srcLDAPescWSSecurity', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('profilesettings','getContactPreferences','PERF','srcLDAPescWSSecurity', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('profilesettings','getLoginProfile','PERF','srcLDAPescWSSecurity', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('profilesettings','updateMemberProfile','PERF','srcLDAPescWSSecurity', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('profilesettings','updateContactPreferences','PERF','srcLDAPescWSSecurity', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
+('profilesettings','updateLoginProfile','PERF','srcLDAPescWSSecurity', 'St@rt100', '', '', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+Delete from MOBILE.PROPERTIES p where p.THE_KEY = 'com.wellpoint.mobility.aggregation.core.environment';
+INSERT INTO MOBILE.PROPERTIES(THE_KEY, THE_VALUE) values ('com.wellpoint.mobility.aggregation.core.environment', 'perf');
